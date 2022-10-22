@@ -22,7 +22,7 @@ group = "io.github.fourlastor"
 version = "1.0"
 
 application {
-    mainClass.set("io.github.fourlastor.jamjam.DesktopLauncherKt")
+    mainClass.set("io.github.fourlastor.game.DesktopLauncherKt")
 }
 
 dependencies {
