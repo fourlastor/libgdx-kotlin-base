@@ -14,9 +14,10 @@ import ktx.scene2d.Scene2DSkin
 import javax.inject.Inject
 
 
-class Game @Inject constructor() : KtxGame<Screen>() {
+class Game @Inject constructor(
+    private val reader: LDtkReader,
+) : KtxGame<Screen>() {
 
-    private val reader = LDtkReader()
     override fun create() {
         Box2D.init()
 
