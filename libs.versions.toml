@@ -1,12 +1,16 @@
 [versions]
 artemis = "2.3.0"
+beryx-runtime = "1.12.7"
 controllers = "2.2.1"
 dagger = "2.44"
 gdx = "1.11.0"
 gdxAi = "1.8.2"
 gltf = "2.0.0-rc.1"
 ktx = "1.10.0-rc2"
+kotlin = "1.7.20"
 serializationJson = "1.3.3"
+shadow = "7.1.2"
+spotless = "6.5.2"
 [libraries]
 artemis = { module = "net.onedaybeard.artemis:artemis-odb", version.ref = "artemis" }
 controllers = { module = "com.badlogicgames.gdx-controllers:gdx-controllers-core", version.ref = "controllers" }
@@ -25,3 +29,10 @@ ktxGraphics = { module = "io.github.libktx:ktx-graphics", version.ref = "ktx" }
 ktxMath = { module = "io.github.libktx:ktx-math", version.ref = "ktx" }
 ktxVis = { module = "io.github.libktx:ktx-vis", version.ref = "ktx" }
 serializationJson = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serializationJson" }
+[plugins]
+beryx-runtime = { id = "org.beryx.runtime", version.ref = "beryx-runtime"}
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadow" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }

@@ -1,7 +1,12 @@
+@Suppress(
+    // known false positive: https://youtrack.jetbrains.com/issue/KTIJ-19369
+    "DSL_SCOPE_VIOLATION"
+)
 plugins {
     idea
-    kotlin("jvm") version "1.7.20"
-    id("com.diffplug.spotless") version "6.5.2"
+    alias(libs.plugins.kotlin.jvm) apply false
+    alias(libs.plugins.kotlin.kapt) apply false
+    alias(libs.plugins.spotless) apply false
 }
 
 allprojects {

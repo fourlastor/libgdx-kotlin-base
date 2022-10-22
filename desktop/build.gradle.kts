@@ -1,10 +1,14 @@
+@Suppress(
+    // known false positive: https://youtrack.jetbrains.com/issue/KTIJ-19369
+    "DSL_SCOPE_VIOLATION"
+)
 plugins {
     id("application")
-    kotlin("jvm")
+    alias(libs.plugins.beryx.runtime)
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.shadow)
+    alias(libs.plugins.spotless)
     application
-    id("com.diffplug.spotless")
-    id("com.github.johnrengelman.shadow") version "7.1.2"
-    id("org.beryx.runtime") version "1.12.7"
 }
 
 spotless {

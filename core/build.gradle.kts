@@ -1,8 +1,11 @@
-
+@Suppress(
+    // known false positive: https://youtrack.jetbrains.com/issue/KTIJ-19369
+    "DSL_SCOPE_VIOLATION"
+)
 plugins {
-    kotlin("jvm")
-    kotlin("kapt")
-    id("com.diffplug.spotless")
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.spotless)
 }
 
 val assetsDir = rootProject.files("assets")
