@@ -1,6 +1,6 @@
 package io.github.fourlastor.game.menu
 
-import com.badlogic.gdx.Gdx
+import com.badlogic.gdx.InputMultiplexer
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.kotcrab.vis.ui.VisUI
 import io.github.fourlastor.game.di.ScreenScoped
@@ -15,8 +15,9 @@ import javax.inject.Inject
 
 @ScreenScoped
 class MenuScreen @Inject constructor(
-    private val game: Router,
-    private val gameData: LDtkMapData,
+    private val inputMultiplexer: InputMultiplexer,
+    private val mapData: LDtkMapData,
+    private val router: Router,
 ) : KtxScreen {
 
     private val stage = Stage()
@@ -25,11 +26,11 @@ class MenuScreen @Inject constructor(
         stage.actors {
             visTable(defaultSpacing = true) {
                 setFillParent(true)
-                gameData.levelDefinitions.forEachIndexed { index, _ ->
+                mapData.levelDefinitions.forEachIndexed { index, _ ->
                     row()
                     visTextButton("Start level ${index + 1}").apply {
                         onClick {
-                            game.goToLevel(index)
+                            router.goToLevel(index)
                         }
                     }
                 }
@@ -43,11 +44,11 @@ class MenuScreen @Inject constructor(
     }
 
     override fun show() {
-        Gdx.input.inputProcessor = stage
+        inputMultiplexer.addProcessor(stage)
     }
 
     override fun hide() {
-        Gdx.input.inputProcessor = null
+        inputMultiplexer.removeProcessor(stage)
     }
 
     override fun render(delta: Float) {

@@ -1,7 +1,6 @@
 package io.github.fourlastor.game.level
 
 import com.artemis.WorldConfigurationBuilder
-import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.InputMultiplexer
 import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.math.Rectangle
@@ -40,6 +39,7 @@ import javax.inject.Inject
 class LevelScreen @Inject constructor(
     levelDefinition: LDtkLevelDefinition,
     data: LDtkMapData,
+    private val inputMultiplexer: InputMultiplexer,
 ) : KtxScreen {
 
     private val definitions = data.defs
@@ -174,14 +174,13 @@ class LevelScreen @Inject constructor(
     }
 
     override fun show() {
-        Gdx.input.inputProcessor = InputMultiplexer(
-            stage,
-            inputSystem.inputProcessor,
-        )
+        inputMultiplexer.addProcessor(stage)
+        inputMultiplexer.addProcessor(inputSystem.inputProcessor)
     }
 
     override fun hide() {
-        Gdx.input.inputProcessor = null
+        inputMultiplexer.removeProcessor(inputSystem.inputProcessor)
+        inputMultiplexer.removeProcessor(stage)
     }
 
     override fun resize(width: Int, height: Int) {

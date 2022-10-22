@@ -1,5 +1,7 @@
 package io.github.fourlastor.game
 
+import com.badlogic.gdx.Gdx
+import com.badlogic.gdx.InputMultiplexer
 import com.badlogic.gdx.Screen
 import com.badlogic.gdx.physics.box2d.Box2D
 import com.kotcrab.vis.ui.VisUI
@@ -19,6 +21,7 @@ import javax.inject.Inject
 class Game @Inject constructor(
     private val levelBuilder: LevelComponent.Builder,
     private val menuBuilder: MenuComponent.Builder,
+    private val inputMultiplexer: InputMultiplexer,
 ) : KtxGame<Screen>(), Router {
 
     private val routerModule = RouterModule(this)
@@ -27,6 +30,7 @@ class Game @Inject constructor(
         Box2D.init()
         VisUI.load(VisUI.SkinScale.X2)
         Scene2DSkin.defaultSkin = VisUI.getSkin()
+        Gdx.input.inputProcessor = inputMultiplexer
         goToMenu()
     }
 
