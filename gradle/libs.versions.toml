@@ -1,0 +1,27 @@
+[versions]
+artemis = "2.3.0"
+controllers = "2.2.1"
+dagger = "2.44"
+gdx = "1.11.0"
+gdxAi = "1.8.2"
+gltf = "2.0.0-rc.1"
+ktx = "1.10.0-rc2"
+serializationJson = "1.3.3"
+[libraries]
+artemis = { module = "net.onedaybeard.artemis:artemis-odb", version.ref = "artemis" }
+controllers = { module = "com.badlogicgames.gdx-controllers:gdx-controllers-core", version.ref = "controllers" }
+controllersDesktop = { module = "com.badlogicgames.gdx-controllers:gdx-controllers-desktop", version.ref = "controllers" }
+dagger = { module = "com.google.dagger:dagger", version.ref = "dagger"}
+daggerCompiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger"}
+gdx = { module = "com.badlogicgames.gdx:gdx", version.ref = "gdx" }
+gdxAi = { module = "com.badlogicgames.gdx:gdx-ai", version.ref = "gdxAi" }
+gdxBackendLwjgl3 = { module = "com.badlogicgames.gdx:gdx-backend-lwjgl3", version.ref = "gdx" }
+gdxBox2d = { module = "com.badlogicgames.gdx:gdx-box2d", version.ref = "gdx" }
+gltf = { module = "com.github.mgsx-dev.gdx-gltf:gltf", version.ref = "gltf" }
+ktxActors = { module = "io.github.libktx:ktx-actors", version.ref = "ktx" }
+ktxApp = { module = "io.github.libktx:ktx-app", version.ref = "ktx" }
+ktxBox2d = { module = "io.github.libktx:ktx-box2d", version.ref = "ktx" }
+ktxGraphics = { module = "io.github.libktx:ktx-graphics", version.ref = "ktx" }
+ktxMath = { module = "io.github.libktx:ktx-math", version.ref = "ktx" }
+ktxVis = { module = "io.github.libktx:ktx-vis", version.ref = "ktx" }
+serializationJson = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serializationJson" }
