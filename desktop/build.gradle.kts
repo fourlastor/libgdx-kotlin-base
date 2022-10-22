@@ -1,3 +1,5 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
 @Suppress(
     // known false positive: https://youtrack.jetbrains.com/issue/KTIJ-19369
     "DSL_SCOPE_VIOLATION"
@@ -11,6 +13,10 @@ plugins {
     application
 }
 
+val gameName: String = requireNotNull(property("io.github.fourlastor.game.name") as? String)
+val gameVersion = requireNotNull(property("io.github.fourlastor.game.version") as? String)
+
+
 spotless {
     isEnforceCheck = false
     kotlin {
@@ -19,12 +25,19 @@ spotless {
 }
 
 group = "io.github.fourlastor"
-version = "1.0"
+version = gameVersion
 
 application {
     mainClass.set("io.github.fourlastor.game.DesktopLauncherKt")
 }
 
+tasks {
+    named<ShadowJar>("shadowJar") {
+        archiveBaseName.set(gameName)
+    }
+}
+
+@Suppress("GradlePackageUpdate") // false positive
 dependencies {
     api(project(":core"))
     api("com.badlogicgames.gdx:gdx-platform:${libs.versions.gdx.get()}:natives-desktop")
