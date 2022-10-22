@@ -1,5 +1,9 @@
+@file:Suppress("UnstableApiUsage")
+
 include("desktop")
 include(":core")
 include("ldtk")
 
-enableFeaturePreview("VERSION_CATALOGS")
+dependencyResolutionManagement {
+    versionCatalogs { create("libs") { from(files("libs.versions.toml")) } }
+}
