@@ -1,17 +1,21 @@
-package io.github.fourlastor.jamjam
+package io.github.fourlastor.jamjam.menu
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.kotcrab.vis.ui.VisUI
+import io.github.fourlastor.jamjam.di.ScreenScoped
+import io.github.fourlastor.jamjam.router.Router
 import io.github.fourlastor.ldtk.LDtkMapData
 import ktx.actors.onClick
 import ktx.app.KtxScreen
 import ktx.scene2d.actors
 import ktx.scene2d.vis.visTable
 import ktx.scene2d.vis.visTextButton
+import javax.inject.Inject
 
-class MenuScreen(
-    private val game: Game,
+@ScreenScoped
+class MenuScreen @Inject constructor(
+    private val game: Router,
     private val gameData: LDtkMapData,
 ) : KtxScreen {
 
@@ -25,7 +29,7 @@ class MenuScreen(
                     row()
                     visTextButton("Start level ${index + 1}").apply {
                         onClick {
-                            game.startGame(
+                            game.goToLevel(
                                 levelDefinition,
                                 gameData.defs
                             )

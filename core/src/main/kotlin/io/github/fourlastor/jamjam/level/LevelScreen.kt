@@ -9,6 +9,7 @@ import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.scenes.scene2d.Stage
 import com.badlogic.gdx.utils.viewport.FitViewport
 import io.github.fourlastor.jamjam.AssetFactory
+import io.github.fourlastor.jamjam.di.ScreenScoped
 import io.github.fourlastor.jamjam.extension.component
 import io.github.fourlastor.jamjam.extension.create
 import io.github.fourlastor.jamjam.level.component.PlayerBodyComponent
@@ -33,8 +34,10 @@ import ktx.scene2d.vis.visLabel
 import ktx.scene2d.vis.visTable
 import ktx.scene2d.vis.visTextButton
 import ktx.scene2d.vis.visTextField
+import javax.inject.Inject
 
-class LevelScreen(
+@ScreenScoped
+class LevelScreen @Inject constructor(
     levelDefinition: LDtkLevelDefinition,
     definitions: Definitions
 ) : KtxScreen {
