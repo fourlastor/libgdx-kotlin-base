@@ -23,8 +23,8 @@ import io.github.fourlastor.jamjam.level.system.PhysicsDebugSystem
 import io.github.fourlastor.jamjam.level.system.PhysicsSystem
 import io.github.fourlastor.jamjam.level.system.RenderFollowBodySystem
 import io.github.fourlastor.jamjam.level.system.RenderSystem
-import io.github.fourlastor.ldtk.Definitions
 import io.github.fourlastor.ldtk.LDtkLevelDefinition
+import io.github.fourlastor.ldtk.LDtkMapData
 import ktx.actors.onChange
 import ktx.app.KtxScreen
 import ktx.box2d.createWorld
@@ -39,9 +39,10 @@ import javax.inject.Inject
 @ScreenScoped
 class LevelScreen @Inject constructor(
     levelDefinition: LDtkLevelDefinition,
-    definitions: Definitions
+    data: LDtkMapData,
 ) : KtxScreen {
 
+    private val definitions = data.defs
     private val scale = 1f / 16f
     private val factory = AssetFactory(scale)
     private val converter = LDtkConverter(factory)

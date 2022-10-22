@@ -25,14 +25,11 @@ class MenuScreen @Inject constructor(
         stage.actors {
             visTable(defaultSpacing = true) {
                 setFillParent(true)
-                gameData.levelDefinitions.forEachIndexed { index, levelDefinition ->
+                gameData.levelDefinitions.forEachIndexed { index, _ ->
                     row()
                     visTextButton("Start level ${index + 1}").apply {
                         onClick {
-                            game.goToLevel(
-                                levelDefinition,
-                                gameData.defs
-                            )
+                            game.goToLevel(index)
                         }
                     }
                 }
