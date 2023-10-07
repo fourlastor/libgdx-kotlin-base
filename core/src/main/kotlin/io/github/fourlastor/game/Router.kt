@@ -2,7 +2,7 @@ package io.github.fourlastor.game
 
 interface Router {
 
-  fun goToMenu()
+    fun goToMenu()
 
-  fun goToLevel(levelIndex: Int)
+    fun goToLevel(levelIndex: Int)
 }

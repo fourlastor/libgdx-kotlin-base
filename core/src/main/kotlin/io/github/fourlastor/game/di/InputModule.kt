@@ -8,5 +8,6 @@ import javax.inject.Singleton
 @Module
 class InputModule {
 
-  @Provides @Singleton fun inputMultiplexer() = InputMultiplexer()
+    @Provides @Singleton
+    fun inputMultiplexer() = InputMultiplexer()
 }

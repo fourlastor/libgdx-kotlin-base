@@ -10,11 +10,11 @@ import io.github.fourlastor.game.level.LevelScreen
 @Subcomponent(modules = [LevelModule::class])
 interface LevelComponent {
 
-  @ScreenScoped fun screen(): LevelScreen
+    @ScreenScoped fun screen(): LevelScreen
 
-  @Subcomponent.Builder
-  interface Builder {
-    fun router(@BindsInstance router: Router): Builder
-    fun build(): LevelComponent
-  }
+    @Subcomponent.Builder
+    interface Builder {
+        fun router(@BindsInstance router: Router): Builder
+        fun build(): LevelComponent
+    }
 }

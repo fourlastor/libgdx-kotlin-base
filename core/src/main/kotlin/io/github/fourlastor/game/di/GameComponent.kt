@@ -8,9 +8,9 @@ import javax.inject.Singleton
 @Component(modules = [ScreensModule::class, InputModule::class])
 internal interface GameComponent {
 
-  fun game(): Game
+    fun game(): Game
 
-  companion object {
-    fun create(): GameComponent = DaggerGameComponent.create()
-  }
+    companion object {
+        fun create(): GameComponent = DaggerGameComponent.create()
+    }
 }

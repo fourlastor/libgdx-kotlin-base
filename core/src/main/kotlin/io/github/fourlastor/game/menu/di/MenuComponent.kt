@@ -10,11 +10,11 @@ import io.github.fourlastor.game.menu.MenuScreen
 @Subcomponent
 interface MenuComponent {
 
-  @ScreenScoped fun screen(): MenuScreen
+    @ScreenScoped fun screen(): MenuScreen
 
-  @Subcomponent.Builder
-  interface Builder {
-    fun router(@BindsInstance router: Router): Builder
-    fun build(): MenuComponent
-  }
+    @Subcomponent.Builder
+    interface Builder {
+        fun router(@BindsInstance router: Router): Builder
+        fun build(): MenuComponent
+    }
 }
