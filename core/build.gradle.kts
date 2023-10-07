@@ -1,7 +1,12 @@
 plugins {
+    `java-library`
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.spotless)
+}
+
+java {
+    toolchain { languageVersion.set(JavaLanguageVersion.of(11)) }
 }
 
 val assetsDir = rootProject.files("assets")
@@ -10,15 +15,15 @@ sourceSets.main.configure {
     resources.srcDir(assetsDir)
 }
 
-java {
-    toolchain { languageVersion.set(JavaLanguageVersion.of(11)) }
-}
-
 spotless {
     isEnforceCheck = false
     kotlin {
         ktlint("1.0.0")
     }
+}
+
+tasks.compileJava.configure {
+    options.encoding = "UTF-8"
 }
 
 dependencies {

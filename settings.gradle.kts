@@ -2,3 +2,4 @@
 
 include(":desktop")
 include(":core")
+include(":teavm")
