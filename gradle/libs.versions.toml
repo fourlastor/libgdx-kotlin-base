@@ -2,9 +2,10 @@
 dagger = "2.48"
 gdx = "1.12.0"
 gdx-ai = "1.8.2"
-ktx = "1.12.0-rc1"
 kotlin = "1.9.0"
-spotless = "6.5.2"
+ktlint = "1.0.0"
+ktx = "1.12.0-rc1"
+spotless = "6.22.0"
 [libraries]
 dagger-core = { module = "com.google.dagger:dagger", version.ref = "dagger"}
 dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger"}

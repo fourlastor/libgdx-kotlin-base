@@ -1,7 +1,3 @@
-@Suppress(
-    // known false positive: https://youtrack.jetbrains.com/issue/KTIJ-19369
-    "DSL_SCOPE_VIOLATION"
-)
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlin.kapt)
@@ -21,7 +17,7 @@ java {
 spotless {
     isEnforceCheck = false
     kotlin {
-        ktfmt("0.37")
+        ktlint("1.0.0")
     }
 }
 
