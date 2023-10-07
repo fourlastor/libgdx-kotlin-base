@@ -14,6 +14,10 @@ sourceSets.main.configure {
     resources.srcDir(assetsDir)
 }
 
+java {
+    toolchain { languageVersion.set(JavaLanguageVersion.of(11)) }
+}
+
 spotless {
     isEnforceCheck = false
     kotlin {
@@ -22,9 +26,6 @@ spotless {
 }
 
 dependencies {
-    api(project(":ldtk"))
-    api(libs.artemis)
-    api(libs.controllers)
     api(libs.dagger)
     kapt(libs.daggerCompiler)
     api(libs.gdx)
@@ -36,5 +37,4 @@ dependencies {
     api(libs.ktxGraphics)
     api(libs.ktxMath)
     api(libs.ktxVis)
-    api(libs.serializationJson)
 }

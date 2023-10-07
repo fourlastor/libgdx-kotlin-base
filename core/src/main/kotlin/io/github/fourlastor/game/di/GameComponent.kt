@@ -5,12 +5,12 @@ import io.github.fourlastor.game.Game
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [JsonModule::class, ScreensModule::class, InputModule::class])
+@Component(modules = [ScreensModule::class, InputModule::class])
 internal interface GameComponent {
 
-    fun game(): Game
+  fun game(): Game
 
-    companion object {
-        fun create(): GameComponent = DaggerGameComponent.create()
-    }
+  companion object {
+    fun create(): GameComponent = DaggerGameComponent.create()
+  }
 }
