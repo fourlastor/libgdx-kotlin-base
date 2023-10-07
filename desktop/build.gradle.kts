@@ -35,8 +35,11 @@ application {
 
 @Suppress("GradlePackageUpdate") // false positive
 dependencies {
-    api(project(":core"))
-    api("com.badlogicgames.gdx:gdx-platform:${libs.versions.gdx.get()}:natives-desktop")
-    api("com.badlogicgames.gdx:gdx-box2d-platform:${libs.versions.gdx.get()}:natives-desktop")
-    api(libs.gdxBackendLwjgl3)
+    implementation(project(":core"))
+    implementation(libs.gdx.backend.lwjgl3)
+    runtimeOnly(nativesDesktop(libs.gdx.platform))
 }
+
+fun DependencyHandlerScope.nativesDesktop(
+    provider: Provider<MinimalExternalModuleDependency>,
+) = variantOf(provider) { classifier("natives-desktop") }

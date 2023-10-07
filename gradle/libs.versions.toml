@@ -1,23 +1,22 @@
 [versions]
 dagger = "2.48"
 gdx = "1.12.0"
-gdxAi = "1.8.2"
+gdx-ai = "1.8.2"
 ktx = "1.12.0-rc1"
 kotlin = "1.9.0"
 spotless = "6.5.2"
 [libraries]
-dagger = { module = "com.google.dagger:dagger", version.ref = "dagger"}
-daggerCompiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger"}
-gdx = { module = "com.badlogicgames.gdx:gdx", version.ref = "gdx" }
-gdxAi = { module = "com.badlogicgames.gdx:gdx-ai", version.ref = "gdxAi" }
-gdxBackendLwjgl3 = { module = "com.badlogicgames.gdx:gdx-backend-lwjgl3", version.ref = "gdx" }
-gdxBox2d = { module = "com.badlogicgames.gdx:gdx-box2d", version.ref = "gdx" }
-ktxActors = { module = "io.github.libktx:ktx-actors", version.ref = "ktx" }
-ktxApp = { module = "io.github.libktx:ktx-app", version.ref = "ktx" }
-ktxBox2d = { module = "io.github.libktx:ktx-box2d", version.ref = "ktx" }
-ktxGraphics = { module = "io.github.libktx:ktx-graphics", version.ref = "ktx" }
-ktxMath = { module = "io.github.libktx:ktx-math", version.ref = "ktx" }
-ktxVis = { module = "io.github.libktx:ktx-vis", version.ref = "ktx" }
+dagger-core = { module = "com.google.dagger:dagger", version.ref = "dagger"}
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger"}
+gdx-core = { module = "com.badlogicgames.gdx:gdx", version.ref = "gdx" }
+gdx-platform = { module = "com.badlogicgames.gdx:gdx-platform", version.ref = "gdx" }
+gdx-ai = { module = "com.badlogicgames.gdx:gdx-ai", version.ref = "gdx-ai" }
+gdx-backend-lwjgl3 = { module = "com.badlogicgames.gdx:gdx-backend-lwjgl3", version.ref = "gdx" }
+ktx-actors = { module = "io.github.libktx:ktx-actors", version.ref = "ktx" }
+ktx-app = { module = "io.github.libktx:ktx-app", version.ref = "ktx" }
+ktx-graphics = { module = "io.github.libktx:ktx-graphics", version.ref = "ktx" }
+ktx-math = { module = "io.github.libktx:ktx-math", version.ref = "ktx" }
+ktx-vis = { module = "io.github.libktx:ktx-vis", version.ref = "ktx" }
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }

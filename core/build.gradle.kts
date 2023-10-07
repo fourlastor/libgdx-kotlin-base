@@ -26,15 +26,13 @@ spotless {
 }
 
 dependencies {
-    api(libs.dagger)
-    kapt(libs.daggerCompiler)
-    api(libs.gdx)
-    api(libs.gdxAi)
-    api(libs.gdxBox2d)
-    api(libs.ktxActors)
-    api(libs.ktxApp)
-    api(libs.ktxBox2d)
-    api(libs.ktxGraphics)
-    api(libs.ktxMath)
-    api(libs.ktxVis)
+    implementation(libs.dagger.core)
+    kapt(libs.dagger.compiler)
+    api(libs.gdx.core)
+    implementation(libs.gdx.ai)
+    implementation(libs.ktx.actors)
+    api(libs.ktx.app)
+    implementation(libs.ktx.graphics)
+    implementation(libs.ktx.math)
+    implementation(libs.ktx.vis)
 }
