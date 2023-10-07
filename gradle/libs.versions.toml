@@ -1,0 +1,30 @@
+[versions]
+dagger = "2.48"
+gdx = "1.11.0"
+gdx-ai = "1.8.2"
+gdx-teavm = "1.0.0-b4"
+google-gson = "2.10.1"
+gretty= "3.1.0"
+kotlin = "1.8.21"
+ktlint = "1.0.0"
+ktx = "1.11.0-rc6"
+spotless = "6.22.0"
+[libraries]
+dagger-core = { module = "com.google.dagger:dagger", version.ref = "dagger"}
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger"}
+gdx-core = { module = "com.badlogicgames.gdx:gdx", version.ref = "gdx" }
+gdx-platform = { module = "com.badlogicgames.gdx:gdx-platform", version.ref = "gdx" }
+gdx-ai = { module = "com.badlogicgames.gdx:gdx-ai", version.ref = "gdx-ai" }
+gdx-backend-lwjgl3 = { module = "com.badlogicgames.gdx:gdx-backend-lwjgl3", version.ref = "gdx" }
+gdx-backend-teavm = { module = "com.github.xpenatan.gdx-teavm:backend-teavm", version.ref = "gdx-teavm" }
+google-gson = { module = "com.google.code.gson:gson", version.ref = "google-gson" }
+ktx-actors = { module = "io.github.libktx:ktx-actors", version.ref = "ktx" }
+ktx-app = { module = "io.github.libktx:ktx-app", version.ref = "ktx" }
+ktx-graphics = { module = "io.github.libktx:ktx-graphics", version.ref = "ktx" }
+ktx-math = { module = "io.github.libktx:ktx-math", version.ref = "ktx" }
+ktx-vis = { module = "io.github.libktx:ktx-vis", version.ref = "ktx" }
+[plugins]
+gretty = { id = "org.gretty", version.ref = "gretty" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }

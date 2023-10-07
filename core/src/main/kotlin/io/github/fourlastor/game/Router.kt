@@ -1,4 +1,4 @@
-package io.github.fourlastor.game.router
+package io.github.fourlastor.game
 
 interface Router {
 
